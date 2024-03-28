@@ -13,7 +13,7 @@
   border-radius: 5px; 
 }
 .todo-input::placeholder{
-  color: #ffffff4d;
+  color: #0a00004d;
 }
 .todo-btn {
   margin:20px;
@@ -67,7 +67,9 @@
 .TodoForm {
   display: flex;
   margin-bottom: 20px;
-   
+}
+.TodoForm input{
+  color:black;
 }
 .todo-update{
   display: flex;
@@ -80,6 +82,16 @@
   border-radius: 5px;
   border-bottom: 1px solid #ddd;
   cursor: pointer;
+}
+.SearchForm{
+  display: center;
+  margin-bottom: 40px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.SearchForm label{
+  position: absolute;
+  left:-99999px
 }
 /* 
 .App-logo {
