@@ -37,10 +37,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .Todo {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center align items vertically */
-  justify-content: space-between; /* Space between items */
-  margin-bottom: 10px; /* Add space below each todo item */
+  /* Add space below each todo item */
 }
 .Todo{
   display: flex;
@@ -52,18 +49,22 @@
   border-radius: 5px;
   border-bottom: 1px solid #ddd;
   cursor: pointer;
+  align-items: center; /* Center align items vertically */
+  margin-bottom: 10px;
 }
 
-.completed {
-  text-decoration: line-through;
-  opacity: 0.5;
+.todo-icons  {
+  padding: 10 px;
 }
-.todo-icons {
-  padding: 10px;
-  display: flex; /* Use flexbox for layout */
+.todo-edit{
+margin-right: 20px;
+} 
+.Todos {
+  list-style: none; /* Remove the default list-style */
+}l
+.Todos input[type="checkbox"]:focus+label{
+  text-decoration: underline;
 }
-
-
 .TodoForm {
   display: flex;
   margin-bottom: 20px;
@@ -93,6 +94,7 @@
   position: absolute;
   left:-99999px
 }
+
 /* 
 .App-logo {
   height: 40vmin;

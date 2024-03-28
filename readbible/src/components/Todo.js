@@ -4,17 +4,30 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
-export const Todo = ({task,toggleComplete, deleteTodo, editTodo}) => {
+export const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
+    
+  
+    return (
+      <div className='Todo'>
+        {/* Use a list item here */}
+        <ul>
+          <li className='Todos'>
+            <input 
+              type="checkbox"
+              onChange={()=>toggleComplete(task.id)}     
+              checked={task.completed}
+            />
+            {/* Place the task text inside the label for better accessibility */}
+            <label 
+                style={{ textDecoration: task.completed ? 'line-through' : 'none', opacity: task.completed ? 0.5 : 1 }} 
+            onDoubleClick={()=>toggleComplete(task.id)}>{task.task}</label>
 
-  return (
-    <div className='Todo'>
-    {/* add as list */}
-        <p onClick={()=>toggleComplete(task.id)} className={`${task.completed?'completed': ""}`}>{task.task}</p>
-        <div>
-        <FontAwesomeIcon icon= {faPenToSquare} className= 'todo-icons'onClick={()=>editTodo(task.id)}/>
-        <FontAwesomeIcon icon={faTrash} onClick={()=>deleteTodo(task.id)}/>
+          </li>
+        </ul>
+        <div className='todo-icons'>
+          <FontAwesomeIcon className='todo-edit' icon={faPenToSquare} onClick={() => editTodo(task.id)} />
+          <FontAwesomeIcon className='todo-delete' icon={faTrash} onClick={() => deleteTodo(task.id)} />
         </div>
-        
-    </div>
-  )
-}
+      </div>
+    );
+  };

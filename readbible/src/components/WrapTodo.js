@@ -24,7 +24,7 @@ export const WrapTodo = () => {
          localStorage.setItem("bibleTodo", JSON.stringify(updatedTodos));
             }
     const toggleComplete= (id)=>{
-         const updatedTodos=todos.map(todo=>todo.id===id?{ ...todo, completed: !todo.completed }:todo)
+         const updatedTodos=todos.map((todo)=>todo.id===id?{ ...todo, completed: !todo.completed }:todo)
          setTodos(updatedTodos)
          localStorage.setItem("bibleTodo",JSON.stringify(updatedTodos))
     }
@@ -56,8 +56,6 @@ export const WrapTodo = () => {
             setTodos(updatedTodos);
         localStorage.setItem("bibleTodo",JSON.stringify(updatedTodos))
     }
-
-    
   return (
     <div className='TodoWrapper'>
     <h1>Get things Done!</h1>
